@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Landing Page Estilo Fudo</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -12,8 +13,9 @@
     <nav class="navbar">
         <div class="logo"><img src="assets/logo.png" alt="Logo" style="width: 30%;"></div>
         <ul class="nav-links">
+            <li><a href="#about">Qué es TicMeal</a></li>
             <li><a href="#features">Funciones</a></li>
-            <li><a href="#pricing">Precios</a></li>
+            <!-- <li><a href="#pricing">Precios</a></li> -->
             <!-- <li><button class="btn-secondary">Iniciar Sesión</button></li> -->
             <li><button class="btn-primary">Prueba Gratis</button></li>
         </ul>
@@ -37,6 +39,46 @@
             </div>
         </div>
     </header>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2>¿Qué es TicMeal?</h2>
+            <p>TicMeal es la plataforma integral diseñada para transformar la experiencia en comedores institucionales. Conectamos a los comensales con la cocina en tiempo real, eliminando filas y optimizando recursos.</p>
+            <p>Nuestra misión es simple: digitalizar la gestión gastronómica para que las empresas puedan ofrecer un mejor servicio, reducir desperdicios y controlar sus costos de manera eficiente.</p>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    <h4>Turnos</h4>
+                </div>
+                
+                <div class="about-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
+                    <h4>Menú</h4>
+                </div>
+
+                <div class="about-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path></svg>
+                    <h4>Tickets en tiempo real</h4>
+                </div>
+
+                <div class="about-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    <h4>Observaciones dietarias</h4>
+                </div>
+
+                <div class="about-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-4-4-3 3"></path></svg>
+                    <h4>Trazabilidad</h4>
+                </div>
+
+                <div class="about-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    <h4>Reportes</h4>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="features" id="features">
         <div class="features-grid">
@@ -72,6 +114,54 @@
             </div>
         </div>
     </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <h2>Contáctanos</h2>
+            <p>¿Listo para optimizar tu comedor? Déjanos tus datos y nos pondremos en contacto.</p>
+            
+            <!-- Reemplaza el action con tu URL de Formspree -->
+            <form action="https://formspree.io/f/xjgbojgz" method="POST" class="contact-form">
+                <div class="form-row">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="text" name="apellido" placeholder="Apellido" required>
+                </div>
+                <div class="form-row">
+                    <input type="text" name="organizacion" placeholder="Organización / Empresa" required>
+                    <input type="text" name="cargo" placeholder="Cargo" required>
+                </div>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="mensaje" placeholder="Déjanos tu mensaje..." rows="5" required></textarea>
+                
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="assets/logo.png" alt="TicMeal" class="footer-logo">
+                <p>Transformando la gestión gastronómica institucional.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#about">Qué es TicMeal</a></li>
+                    <li><a href="#features">Funciones</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <p>ticmeal.app@gmail.com</p>
+                <!-- <p>+54 11 1234-5678</p> -->
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 TicMeal. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
