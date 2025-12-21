@@ -56,6 +56,10 @@ body {
     color: var(--primary-color);
 }
 
+.nav-links a.btn-primary {
+    color: white;
+}
+
 /* Hero Section */
 .hero {
     display: flex;
@@ -130,6 +134,9 @@ body {
     cursor: pointer;
     font-weight: 600;
     transition: all 0.3s ease;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
 }
 
 .btn-primary:hover {
