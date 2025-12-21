@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Estilo Fudo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><img src="assets/logo.png" alt="Logo" style="width: 30%;"></div>
+        <ul class="nav-links">
+            <li><a href="#features">Funciones</a></li>
+            <li><a href="#pricing">Precios</a></li>
+            <!-- <li><button class="btn-secondary">Iniciar Sesión</button></li> -->
+            <li><button class="btn-primary">Prueba Gratis</button></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>El software de gestión para tu comedor institucional.</h1>
+            <p>Optimiza tus horarios, organiza tus pedidos y toma el control total de tu comedor.</p>
+            <div class="hero-btns">
+                <!-- <button class="btn-primary btn-large">Empezar ahora</button>
+                <button class="btn-outline btn-large">Ver demostración</button> -->
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="monitor-wrapper">
+                <img src="assets/kitchen-monitor.png" alt="Vista Desktop" class="desktop-mockup">
+            </div>
+            <div class="mobile-wrapper">
+                <img src="assets/ticket.png" alt="Vista Mobile" class="mobile-mockup">
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="features">
+        <div class="feature-item">
+            <div class="feature-text">
+                <h2>Control de Stock en tiempo real</h2>
+                <p>No pierdas dinero por falta de insumos. Gestiona tus inventarios de forma automática con cada orden.</p>
+            </div>
+            <div class="feature-img">
+                <img src="assets/stock-report.png" alt="Feature 1">
+            </div>
+        </div>
+
+        <div class="feature-item reverse">
+            <div class="feature-text">
+                <h2>Reportes detallados</h2>
+                <p>Conoce cuáles son tus platos más vendidos y analiza tus márgenes de ganancia con un solo clic.</p>
+            </div>
+            <div class="feature-img">
+                <img src="assets/stock.png" alt="Feature 2">
+            </div>
+        </div>
+
+        <div class="feature-item">
+            <div class="feature-text">
+                <h2>Pedidos automáticos</h2>
+                <p>Facilita los pedidos mediante la generación de un ticket desde cualquier dispositivo.</p>
+            </div>
+            <div class="feature-img">
+                <img src="assets/phone-ticket.png" alt="Feature 1">
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
