@@ -308,6 +308,27 @@ body {
     box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
 }
 
+/* Añade o modifica esto en tu style.css */
+.feature-card p {
+    color: var(--text-gray);
+    font-size: 0.95rem; /* Un poco más pequeño para elegancia */
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.feature-card h3 {
+    font-size: 1.3rem; /* Más equilibrado */
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    max-width: 90%;
+    min-height: 3.6em; /* Evita que el layout salte cuando el texto cambia en el script */
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .hero {

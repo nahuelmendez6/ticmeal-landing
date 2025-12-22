@@ -1,23 +1,23 @@
 const heroData = [
     {
-        text: "Optimiza tus horarios, organiza tus pedidos y toma el control total de tu comedor.",
+        text: "Estandarice la logística alimentaria y mejore la experiencia de sus colaboradores.",
         desktop: "assets/kitchen-monitor.png",
         mobile: "assets/ticket.png"
     },
     {
-        text: "Gestiona tu menú y sus recetas.",
+        text: "Gestione menús inteligentes y centralice sus fichas técnicas/recetarios.",
         desktop: "assets/item-recipe.png"
     },
     {
-        text: "Gestiona turnos y horarios.",
+        text: "Optimice el flujo de comensales mediante una gestión de turnos eficiente.",
         desktop: "assets/hours.png"
     },
     {
-        text: "Asigná diferemtes menúes a los turnos.",
+        text: "Personalice la oferta gastronómica según la franja horaria y sede.",
         desktop: "assets/shift-menu.png"
     },
     {
-        text: "Obtené reportes sobre los costos.",
+        text: "Tome decisiones basadas en datos con analítica de costos en tiempo real.",
         desktop: "assets/costos.png"
     }
 ];
