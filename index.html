@@ -6,155 +6,199 @@
     <title>TicMeal | Gestión Inteligente de Comedores Institucionales</title>
     <link rel="icon" href="assets/favicon.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="dark-theme">
 
     <nav class="navbar">
-        <div class="logo"><img src="assets/logo.png" alt="TicMeal Logo" style="width: 30%;"></div>
-        <ul class="nav-links">
-            <li><a href="#about">Solución</a></li>
-            <li><a href="#features">Funciones</a></li>
-            <li><a href="#contact" class="btn-primary">Solicitar Demo</a></li>
-        </ul>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="assets/logo.png" alt="TicMeal Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">Solución</a></li>
+                <li><a href="#features">Funciones</a></li>
+                <li><a href="#contact" class="btn-primary">Solicitar Demo</a></li>
+            </ul>
+        </div>
     </nav>
 
     <header class="hero">
-        <div class="hero-content">
-            <h1>La plataforma integral para la gestión de comedores corporativos.</h1>
-            <p id="hero-text">Optimice la logística alimentaria, reduzca el desperdicio y mejore la experiencia de sus colaboradores.</p>
-            <div class="hero-btns">
-                <a href="#contact" class="btn-primary">Agendar Consultoría</a>
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="assets/header-video.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container hero-container">
+            <div class="hero-content animate-on-load">
+                <div class="badge">Innovación en Gestión Gastronómica</div>
+                <h1>La plataforma integral para la gestión de comedores corporativos.</h1>
+                <p id="hero-text">Optimice la logística alimentaria, reduzca el desperdicio y mejore la experiencia de sus colaboradores.</p>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="monitor-wrapper">
-                <img id="hero-desktop-img" src="assets/kitchen-monitor.png" alt="Panel de Control Kitchen" class="desktop-mockup">
-            </div>
-            <div class="mobile-wrapper">
-                <img id="hero-mobile-img" src="assets/ticket.png" alt="Interfaz Móvil TicMeal" class="mobile-mockup">
+            <div class="hero-btns-bottom animate-on-load">
+                <a href="#contact" class="btn-primary btn-glow">Agendar Consultoría</a>
+                <a href="#features" class="btn-secondary btn-glow">Ver Funciones</a>
             </div>
         </div>
     </header>
 
     <section class="about" id="about">
-        <div class="about-content">
-            <h2>Eficiencia operativa en cada servicio.</h2>
-            <p>TicMeal es la solución tecnológica diseñada para transformar la gestión gastronómica en entornos institucionales. Conectamos la demanda de los comensales con la capacidad de producción en tiempo real.</p>
-            <p>Nuestra misión es digitalizar procesos críticos para que las empresas reduzcan costos operativos, optimicen insumos y ofrezcan un servicio de alta calidad y trazable.</p>
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <h2 class="gradient-text">Eficiencia operativa en cada servicio.</h2>
+                <p class="section-subtitle">TicMeal es la solución tecnológica diseñada para transformar la gestión gastronómica en entornos institucionales.</p>
+            </div>
             
             <div class="about-grid">
-                <div class="about-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <div class="about-card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
                     <h4>Gestión de Aforos</h4>
+                    <p>Control preciso de la capacidad y flujo de personas.</p>
                 </div>
                 
-                <div class="about-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
+                <div class="about-card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
+                    </div>
                     <h4>Ingeniería de Menú</h4>
+                    <p>Diseño inteligente de platos y balances nutricionales.</p>
                 </div>
 
-                <div class="about-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path></svg>
+                <div class="about-card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path></svg>
+                    </div>
                     <h4>Despacho Digital</h4>
+                    <p>Sincronización en tiempo real entre pedido y cocina.</p>
                 </div>
 
-                <div class="about-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <div class="about-card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    </div>
                     <h4>Control Dietario</h4>
+                    <p>Personalización de la oferta según necesidades médicas.</p>
                 </div>
 
-                <div class="about-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-4-4-3 3"></path></svg>
+                <div class="about-card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-4-4-3 3"></path></svg>
+                    </div>
                     <h4>Trazabilidad</h4>
+                    <p>Seguimiento completo desde el insumo hasta el plato.</p>
                 </div>
 
-                <div class="about-card">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" cy="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                <div class="about-card animate-on-scroll">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </div>
                     <h4>Analítica BI</h4>
+                    <p>Dashboards estratégicos para decisiones informadas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="features" id="features">
-        <div class="features-grid">
-            <div class="feature-card">
-                <img src="assets/stock-report.png" alt="Control de Stock">
-                <h3>Visibilidad de Inventario</h3>
-                <p>Automatice la trazabilidad de insumos y evite quiebres de stock. El sistema descuenta existencias en tiempo real con cada orden confirmada.</p>
+    <section class="features-sticky" id="features">
+        <div class="container sticky-wrapper">
+            <div class="sticky-visual animate-on-scroll">
+                <div class="mockup-container">
+                    <!-- Estos elementos cambiarán dinámicamente con el scroll -->
+                    <img src="assets/stock-report.png" alt="App Preview" class="active" id="sticky-img">
+                    <div class="glow-effect"></div>
+                </div>
             </div>
-            <div class="feature-card">
-                <img src="assets/stock.png" alt="Reportes detallados">
-                <h3>Business Intelligence</h3>
-                <p>Identifique patrones de consumo, horas pico y rentabilidad por plato mediante tableros de control diseñados para la toma de decisiones.</p>
-            </div>
-            <div class="feature-card">
-                <img src="assets/phone-ticket.png" alt="Autogestión">
-                <h3>Autogestión de Pedidos</h3>
-                <p>Digitalice la demanda permitiendo que el colaborador gestione su reserva desde el móvil, eliminando esperas y filas innecesarias.</p>
-            </div>
-            <div class="feature-card">
-                <img src="assets/kitchen.png" alt="Agilidad en cocina">
-                <h3>Optimización del Despacho</h3>
-                <p>Incremente la productividad del staff de cocina con una interfaz visual que organiza las prioridades de entrega de manera automática.</p>
-            </div>
-            <div class="feature-card">
-                <img src="assets/shifts.png" alt="Gestión de turnos">
-                <h3>Planificación de Turnos</h3>
-                <p>Gestione la capacidad instalada configurando franjas horarias inteligentes para garantizar un flujo constante y seguro de personas.</p>
-            </div>
-            <div class="feature-card">
-                <img src="assets/menu-options.png" alt="Organización de menú">
-                <h3>Estandarización de Recetas</h3>
-                <p>Centralice sus fichas técnicas y costos. Cargue opciones de menú dinámicas asegurando la consistencia en cada servicio.</p>
+            <div class="sticky-content">
+                <div class="feature-item animate-on-scroll" data-img="assets/stock-report.png">
+                    <h3>Visibilidad de Inventario</h3>
+                    <p>Automatice la trazabilidad de insumos y evite quiebres de stock. El sistema descuenta existencias en tiempo real con cada orden confirmada.</p>
+                </div>
+                <div class="feature-item animate-on-scroll" data-img="assets/stock.png">
+                    <h3>Business Intelligence</h3>
+                    <p>Identifique patrones de consumo, horas pico y rentabilidad por plato mediante tableros de control diseñados para la toma de decisiones.</p>
+                </div>
+                <div class="feature-item animate-on-scroll" data-img="assets/phone-ticket.png">
+                    <h3>Autogestión de Pedidos</h3>
+                    <p>Digitalice la demanda permitiendo que el colaborador gestione su reserva desde el móvil, eliminando esperas y filas innecesarias.</p>
+                </div>
+                <div class="feature-item animate-on-scroll" data-img="assets/kitchen.png">
+                    <h3>Optimización del Despacho</h3>
+                    <p>Incremente la productividad del staff de cocina con una interfaz visual que organiza las prioridades de entrega de manera automática.</p>
+                </div>
+                <div class="feature-item animate-on-scroll" data-img="assets/shifts.png">
+                    <h3>Planificación de Turnos</h3>
+                    <p>Gestione la capacidad instalada configurando franjas horarias inteligentes para garantizar un flujo constante y seguro de personas.</p>
+                </div>
+                <div class="feature-item animate-on-scroll" data-img="assets/menu-options.png">
+                    <h3>Estandarización de Recetas</h3>
+                    <p>Centralice sus fichas técnicas y costos. Cargue opciones de menú dinámicas asegurando la consistencia en cada servicio.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2>Impulse su transformación digital</h2>
-            <p>Descubra cómo TicMeal puede optimizar su operación. Complete el formulario y un consultor se pondrá en contacto.</p>
-            
-            <form action="https://formspree.io/f/xjgbojgz" method="POST" class="contact-form">
-                <div class="form-row">
-                    <input type="text" name="nombre" placeholder="Nombre" required>
-                    <input type="text" name="apellido" placeholder="Apellido" required>
+        <div class="container">
+            <div class="contact-box glass animate-on-scroll">
+                <div class="contact-header">
+                    <h2 class="gradient-text">Impulse su transformación digital</h2>
+                    <p>Descubra cómo TicMeal puede optimizar su operación. Complete el formulario y un consultor se pondrá en contacto.</p>
                 </div>
-                <div class="form-row">
-                    <input type="text" name="organizacion" placeholder="Empresa / Institución" required>
-                    <input type="text" name="cargo" placeholder="Cargo / Departamento" required>
-                </div>
-                <input type="email" name="email" placeholder="Correo corporativo" required>
-                <textarea name="mensaje" placeholder="Describa brevemente las necesidades de su comedor..." rows="5" required></textarea>
                 
-                <button type="submit" class="btn-primary">Enviar Solicitud</button>
-            </form>
+                <form action="https://formspree.io/f/xjgbojgz" method="POST" class="contact-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="text" name="nombre" placeholder="Nombre" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="apellido" placeholder="Apellido" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="input-group">
+                            <input type="text" name="organizacion" placeholder="Empresa / Institución" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" name="cargo" placeholder="Cargo / Departamento" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" name="email" placeholder="Correo corporativo" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea name="mensaje" placeholder="Describa brevemente las necesidades de su comedor..." rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary btn-block btn-glow">Enviar Solicitud</button>
+                </form>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <img src="assets/logo.png" alt="TicMeal" class="footer-logo">
-                <p>Innovación tecnológica para la gestión gastronómica institucional.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <img src="assets/logo.png" alt="TicMeal" class="footer-logo">
+                    <p>Innovación tecnológica para la gestión gastronómica institucional.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#about">Solución</a></li>
+                        <li><a href="#features">Funciones</a></li>
+                        <li><a href="#contact">Solicitar Demo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Canales Directos</h4>
+                    <p>ticmeal.app@gmail.com</p>
+                </div>
             </div>
-            <div class="footer-section">
-                <h4>Navegación</h4>
-                <ul>
-                    <li><a href="#about">Solución</a></li>
-                    <li><a href="#features">Funciones</a></li>
-                    <li><a href="#contact">Solicitar Demo</a></li>
-                </ul>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TicMeal. Soluciones Enterprise para Comedores.</p>
             </div>
-            <div class="footer-section">
-                <h4>Canales Directos</h4>
-                <p>ticmeal.app@gmail.com</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 TicMeal. Soluciones Enterprise para Comedores.</p>
         </div>
     </footer>
 
