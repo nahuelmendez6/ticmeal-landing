@@ -1,14 +1,21 @@
 :root {
-    --primary: #0066ff;
-    --primary-glow: rgba(0, 102, 255, 0.5);
-    --secondary: #7000ff;
-    --bg-dark: #050505;
-    --bg-card: #121212;
-    --text-main: #ffffff;
-    --text-dim: #a0a0a0;
-    --glass: rgba(255, 255, 255, 0.03);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --accent-gradient: linear-gradient(135deg, #0066ff, #7000ff);
+    --primary: #6EC9A8;
+    --primary-glow: rgba(110, 201, 168, 0.4);
+    --secondary: #3F66C4;
+    --secondary-glow: rgba(63, 102, 196, 0.4);
+    --bg-main: #F4F7F9;
+    --bg-card: #ffffff;
+    --text-main: #24303F;
+    --text-dim: #64748B;
+    --glass: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(36, 48, 63, 0.08);
+    --accent-gradient: linear-gradient(135deg, #6EC9A8, #3F66C4);
+
+    /* Semantic Colors */
+    --success: #22C55E;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+    --info: #0EA5E9;
 }
 
 * {
@@ -23,8 +30,8 @@ html {
     scroll-padding-top: 80px;
 }
 
-body.dark-theme {
-    background-color: var(--bg-dark);
+body.light-theme {
+    background-color: var(--bg-main);
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -64,6 +71,12 @@ h1 {
     margin-bottom: 20px;
 }
 
+.hero .badge {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    color: var(--primary);
+}
+
 /* Navbar */
 .navbar {
     position: fixed;
@@ -79,7 +92,7 @@ h1 {
 }
 
 .navbar.scrolled {
-    background: rgba(5, 5, 5, 0.85);
+    background: rgba(244, 247, 249, 0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--glass-border);
     height: 80px;
@@ -116,7 +129,15 @@ h1 {
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.navbar:not(.scrolled) .nav-links a {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.navbar:not(.scrolled) .nav-links a:hover {
+    color: #ffffff;
+}
+
+.navbar.scrolled .nav-links a:hover {
     color: var(--text-main);
 }
 
@@ -134,9 +155,13 @@ h1 {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--text-main);
+    background: #ffffff;
     position: relative;
     transition: background 0.3s;
+}
+
+.navbar.scrolled .hamburger {
+    background: var(--text-main);
 }
 
 .hamburger::before,
@@ -145,8 +170,13 @@ h1 {
     position: absolute;
     width: 24px;
     height: 2px;
-    background: var(--text-main);
+    background: #ffffff;
     transition: transform 0.3s, top 0.3s;
+}
+
+.navbar.scrolled .hamburger::before,
+.navbar.scrolled .hamburger::after {
+    background: var(--text-main);
 }
 
 .hamburger::before {
@@ -201,7 +231,7 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.7) 0%, rgba(5, 5, 5, 0.4) 50%, rgba(5, 5, 5, 0.9) 100%);
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.75) 0%, rgba(5, 5, 5, 0.35) 60%, var(--bg-main) 100%);
     z-index: 1;
 }
 
@@ -223,16 +253,17 @@ h1 {
 }
 
 .hero-content h1 {
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
 
 .hero-content p {
     font-size: 1.25rem;
-    color: var(--text-dim);
+    color: rgba(255, 255, 255, 0.85);
     margin-bottom: 20px;
     margin-left: auto; /* Aligns to right when using max-width */
     max-width: 540px;
-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
 .hero-btns-bottom {
@@ -259,7 +290,7 @@ h1 {
 /* Buttons */
 .btn-primary {
     background: var(--primary);
-    color: white;
+    color: var(--text-main);
     padding: 14px 32px;
     border-radius: 12px;
     text-decoration: none;
@@ -291,7 +322,7 @@ h1 {
 }
 
 .btn-secondary.btn-glow:hover {
-    box-shadow: 0 0 25px rgba(112, 0, 255, 0.5);
+    box-shadow: 0 0 25px var(--secondary-glow);
     transform: translateY(-2px);
 }
 
@@ -354,7 +385,8 @@ h1 {
 .about-card:hover {
     border-color: var(--primary);
     transform: translateY(-10px);
-    background: rgba(255,255,255,0.02);
+    background: #ffffff;
+    box-shadow: 0 12px 30px rgba(63, 102, 196, 0.08);
 }
 
 .card-icon {
@@ -507,24 +539,33 @@ h1 {
 .input-group input,
 .input-group textarea {
     width: 100%;
-    background: rgba(255,255,255,0.05);
+    background: rgba(255, 255, 255, 0.9);
     border: 1px solid var(--glass-border);
     padding: 18px 24px;
     border-radius: 14px;
-    color: white;
+    color: var(--text-main);
     font-size: 1rem;
     outline: none;
     transition: all 0.3s;
 }
 
+.input-group input::placeholder,
+.input-group textarea::placeholder {
+    color: var(--text-dim);
+    opacity: 0.7;
+}
+
 .input-group input:focus,
 .input-group textarea:focus {
     border-color: var(--primary);
-    background: rgba(255,255,255,0.08);
+    background: #ffffff;
+    box-shadow: 0 0 10px rgba(110, 201, 168, 0.15);
 }
 
 /* Footer */
 .footer {
+    background-color: var(--text-main);
+    color: #ffffff;
     padding: 100px 0 40px;
     border-top: 1px solid var(--glass-border);
 }
@@ -543,13 +584,14 @@ h1 {
 }
 
 .footer-info p {
-    color: var(--text-dim);
+    color: #94A3B8;
     max-width: 300px;
 }
 
 .footer h4 {
     font-size: 1.1rem;
     margin-bottom: 25px;
+    color: #ffffff;
 }
 
 .footer ul {
@@ -562,20 +604,20 @@ h1 {
 
 .footer a {
     text-decoration: none;
-    color: var(--text-dim);
+    color: #94A3B8;
     transition: color 0.3s;
 }
 
 .footer a:hover {
-    color: var(--text-main);
+    color: #ffffff;
 }
 
 .footer-bottom {
     text-align: center;
-    color: #555;
+    color: #64748B;
     font-size: 0.9rem;
     padding-top: 40px;
-    border-top: 1px solid rgba(255,255,255,0.05);
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 /* Animations */
@@ -686,7 +728,7 @@ h1 {
         right: -100%;
         width: 280px;
         height: 100vh;
-        background: rgba(10, 10, 10, 0.98);
+        background: rgba(244, 247, 249, 0.98);
         backdrop-filter: blur(20px);
         border-left: 1px solid var(--glass-border);
         flex-direction: column;
@@ -712,6 +754,11 @@ h1 {
         font-size: 1.2rem;
         display: block;
         padding: 10px;
+        color: var(--text-dim) !important;
+    }
+
+    .nav-links a:hover {
+        color: var(--text-main) !important;
     }
     
     .form-row {
