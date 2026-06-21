@@ -45,7 +45,7 @@ body.light-theme {
 
 /* Typography & Effects */
 h1 {
-    font-size: 4rem;
+    font-size: 2.6rem;
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.04em;
@@ -245,14 +245,16 @@ h1 {
 }
 
 .hero-content {
-    text-align: right;
+    text-align: left;
     max-width: 700px;
-    margin-left: auto;
+    margin-left: 0;
+    margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
 }
 
 .hero-content h1 {
+    text-align: left;
     color: #ffffff;
     text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
 }
@@ -261,15 +263,17 @@ h1 {
     font-size: 1.25rem;
     color: rgba(255, 255, 255, 0.85);
     margin-bottom: 20px;
-    margin-left: auto; /* Aligns to right when using max-width */
+    margin-left: 0;
+    margin-right: auto;
     max-width: 540px;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    text-align: left;
 }
 
 .hero-btns-bottom {
     display: flex;
     gap: 20px;
-    justify-content: flex-end;
+    justify-content: flex-start;
     margin-top: 40px;
 }
 
@@ -579,7 +583,6 @@ h1 {
 
 .footer-logo {
     height: 40px;
-    filter: brightness(0) invert(1);
     margin-bottom: 25px;
 }
 
@@ -675,13 +678,13 @@ h1 {
     }
     
     .hero-content {
-        text-align: right;
-        margin-left: auto;
-        margin-right: 0;
+        text-align: left;
+        margin-left: 0;
+        margin-right: auto;
     }
     
     .hero-btns-bottom {
-        justify-content: flex-end;
+        justify-content: flex-start;
     }
 
     /* Inline features display for tablets & mobile */
@@ -771,6 +774,10 @@ h1 {
         border-radius: 24px;
     }
     
+    .contact-header h2 {
+        font-size: clamp(1.5rem, 6vw, 2.2rem);
+    }
+    
     .footer-grid {
         grid-template-columns: 1fr;
         gap: 40px;
@@ -780,14 +787,31 @@ h1 {
         padding: 80px 0;
     }
     
+    .about-card {
+        padding: 30px 20px;
+    }
+    
+    .about-card h4 {
+        font-size: 1.15rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
     .section-header h2 {
         font-size: 2.2rem;
     }
-    
-    .features-sticky {
-        padding: 80px 0;
-    }
-}
+        .features-sticky {
+          padding: 80px 0;
+      }
+      
+      .feature-item h3 {
+          font-size: clamp(1.1rem, 5.5vw, 1.7rem);
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+  }
 
 @media (max-width: 576px) {
     h1 { font-size: 1.8rem; }
