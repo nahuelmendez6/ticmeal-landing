@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicMeal | Gestión Inteligente de Comedores Institucionales</title>
-    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="icon" href="assets/pwa-192x192.png" type="image/png">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -13,8 +13,11 @@
     <nav class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <img src="assets/logo.png" alt="TicMeal Logo">
+                <img src="assets/logo-navbar.png" alt="TicMeal Logo">
             </div>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="#about">Solución</a></li>
                 <li><a href="#features">Funciones</a></li>
@@ -112,26 +115,32 @@
             <div class="sticky-content">
                 <div class="feature-item animate-on-scroll" data-img="assets/stock-report.png">
                     <h3>Visibilidad de Inventario</h3>
+                    <img src="assets/stock-report.png" alt="Visibilidad de Inventario" class="mobile-feature-img">
                     <p>Automatice la trazabilidad de insumos y evite quiebres de stock. El sistema descuenta existencias en tiempo real con cada orden confirmada.</p>
                 </div>
                 <div class="feature-item animate-on-scroll" data-img="assets/stock.png">
                     <h3>Business Intelligence</h3>
+                    <img src="assets/stock.png" alt="Business Intelligence" class="mobile-feature-img">
                     <p>Identifique patrones de consumo, horas pico y rentabilidad por plato mediante tableros de control diseñados para la toma de decisiones.</p>
                 </div>
                 <div class="feature-item animate-on-scroll" data-img="assets/phone-ticket.png">
                     <h3>Autogestión de Pedidos</h3>
+                    <img src="assets/phone-ticket.png" alt="Autogestión de Pedidos" class="mobile-feature-img">
                     <p>Digitalice la demanda permitiendo que el colaborador gestione su reserva desde el móvil, eliminando esperas y filas innecesarias.</p>
                 </div>
                 <div class="feature-item animate-on-scroll" data-img="assets/kitchen.png">
                     <h3>Optimización del Despacho</h3>
+                    <img src="assets/kitchen.png" alt="Optimización del Despacho" class="mobile-feature-img">
                     <p>Incremente la productividad del staff de cocina con una interfaz visual que organiza las prioridades de entrega de manera automática.</p>
                 </div>
                 <div class="feature-item animate-on-scroll" data-img="assets/shifts.png">
                     <h3>Planificación de Turnos</h3>
+                    <img src="assets/shifts.png" alt="Planificación de Turnos" class="mobile-feature-img">
                     <p>Gestione la capacidad instalada configurando franjas horarias inteligentes para garantizar un flujo constante y seguro de personas.</p>
                 </div>
                 <div class="feature-item animate-on-scroll" data-img="assets/menu-options.png">
                     <h3>Estandarización de Recetas</h3>
+                    <img src="assets/menu-options.png" alt="Estandarización de Recetas" class="mobile-feature-img">
                     <p>Centralice sus fichas técnicas y costos. Cargue opciones de menú dinámicas asegurando la consistencia en cada servicio.</p>
                 </div>
             </div>
@@ -180,7 +189,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-info">
-                    <img src="assets/logo.png" alt="TicMeal" class="footer-logo">
+                    <img src="assets/logo-navbar.png" alt="TicMeal" class="footer-logo">
                     <p>Innovación tecnológica para la gestión gastronómica institucional.</p>
                 </div>
                 <div class="footer-links">

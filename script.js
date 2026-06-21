@@ -128,3 +128,22 @@ function checkScroll() {
 }
 window.addEventListener('scroll', checkScroll);
 window.addEventListener('DOMContentLoaded', checkScroll);
+
+// Mobile navigation toggle menu drawer
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('open');
+            navLinks.classList.remove('open');
+        });
+    });
+}
