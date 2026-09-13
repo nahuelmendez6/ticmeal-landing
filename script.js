@@ -149,22 +149,42 @@ document.addEventListener('DOMContentLoaded', () => {
     handleNavbarScroll();
 
     /* ==========================================================================
-       4. MOBILE NAVIGATION DRAWER
+       4. MOBILE NAVIGATION DRAWER & OVERLAY
        ========================================================================== */
     const navToggle = document.querySelector('.nav-toggle');
     const navLinks = document.querySelector('.nav-links');
+    const navOverlay = document.getElementById('nav-overlay');
+
+    function closeMobileMenu() {
+        if (navToggle) navToggle.classList.remove('open');
+        if (navLinks) navLinks.classList.remove('open');
+        if (navOverlay) navOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+    }
+
+    function toggleMobileMenu() {
+        if (!navToggle || !navLinks) return;
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.classList.toggle('open', isOpen);
+        if (navOverlay) navOverlay.classList.toggle('open', isOpen);
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+    }
 
     if (navToggle && navLinks) {
-        navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('open');
-            navLinks.classList.toggle('open');
-        });
+        navToggle.addEventListener('click', toggleMobileMenu);
+
+        if (navOverlay) {
+            navOverlay.addEventListener('click', closeMobileMenu);
+        }
 
         navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('open');
-                navLinks.classList.remove('open');
-            });
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navLinks.classList.contains('open')) {
+                closeMobileMenu();
+            }
         });
     }
 
