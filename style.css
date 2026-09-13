@@ -218,7 +218,7 @@ p {
     height: 85px;
     display: flex;
     align-items: center;
-    z-index: 1000;
+    z-index: 1050;
     background: rgba(10, 15, 29, 0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -256,20 +256,22 @@ p {
 }
 
 .logo-enterprise-badge {
-    background: linear-gradient(135deg, rgba(110, 201, 168, 0.2), rgba(63, 102, 196, 0.2));
-    border: 1px solid var(--primary);
+    background: rgba(110, 201, 168, 0.12);
+    border: 1px solid rgba(110, 201, 168, 0.4);
     color: var(--primary);
-    font-size: 0.68rem;
-    font-weight: 800;
+    font-size: 0.54rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    padding: 3px 8px;
-    border-radius: 6px;
+    letter-spacing: 0.06em;
+    padding: 1px 5px;
+    border-radius: 4px;
+    line-height: 1.2;
 }
 
 .navbar.scrolled .logo-enterprise-badge {
-    border-color: var(--secondary);
+    border-color: rgba(63, 102, 196, 0.35);
     color: var(--secondary);
+    background: rgba(63, 102, 196, 0.08);
 }
 
 .nav-links {
@@ -350,12 +352,13 @@ p {
 .nav-toggle.open .hamburger::before { top: 0; transform: rotate(45deg); }
 .nav-toggle.open .hamburger::after { top: 0; transform: rotate(-45deg); }
 
-/* Mobile Menu Backdrop Overlay */
+/* Mobile Menu Backdrop Overlay (Clean Dark Tint, No Blur) */
 .nav-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(10, 15, 29, 0.7);
-    backdrop-filter: blur(4px);
+    background: rgba(10, 15, 29, 0.65);
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     z-index: 1040;
     opacity: 0;
     pointer-events: none;
@@ -749,11 +752,60 @@ p {
     margin-bottom: 35px;
 }
 
+.pillars-grid,
 .metrics-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
     margin-bottom: 40px;
+}
+
+.pillar-card {
+    text-align: left;
+    padding: 26px 22px;
+    background: #FFFFFF;
+    border: 1px solid var(--border-light);
+    border-radius: 16px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.pillar-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(110, 201, 168, 0.5);
+}
+
+.pillar-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: rgba(110, 201, 168, 0.12);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.pillar-icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.pillar-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 8px;
+}
+
+.pillar-desc {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+    margin: 0;
 }
 
 .metric-card {
@@ -1894,7 +1946,8 @@ p {
         margin: 0 auto;
     }
 
-    /* Social Proof */
+    /* Social Proof / Pillars */
+    .pillars-grid,
     .metrics-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
@@ -2006,13 +2059,17 @@ p {
         padding: 0 20px;
     }
 
-    /* Navbar & Mobile Navigation Drawer */
+    /* Navbar & Mobile Navigation Drawer (Crisp, No Blur) */
     .navbar {
         height: 70px;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 
     .navbar.scrolled {
         height: 65px;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
 
     .logo img {
@@ -2035,15 +2092,19 @@ p {
         width: min(300px, 85vw);
         height: 100dvh;
         height: 100vh;
-        background: #0A0F1D;
+        background: #0A0F1D !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        filter: none !important;
+        opacity: 1 !important;
         flex-direction: column;
         justify-content: flex-start;
         align-items: stretch;
         gap: 18px;
         transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-        z-index: 1050;
+        z-index: 1060;
         padding: 80px 24px 40px;
-        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.7);
+        box-shadow: -10px 0 35px rgba(0, 0, 0, 0.85);
         overflow-y: auto;
         -webkit-overflow-scrolling: touch;
     }
@@ -2057,7 +2118,9 @@ p {
         text-align: left;
     }
 
-    .nav-links a {
+    .nav-links a,
+    .navbar.scrolled .nav-links a {
+        color: #E2E8F0 !important;
         font-size: 1.05rem;
         display: block;
         padding: 10px 14px;
@@ -2065,14 +2128,19 @@ p {
         transition: background 0.2s, color 0.2s;
     }
 
-    .nav-links a:hover {
+    .nav-links a:hover,
+    .navbar.scrolled .nav-links a:hover {
         background: rgba(255, 255, 255, 0.08);
+        color: #FFFFFF !important;
     }
 
-    .nav-cta {
+    .nav-cta,
+    .navbar.scrolled .nav-cta {
         margin-top: 10px;
         text-align: center !important;
         width: 100%;
+        background: var(--primary) !important;
+        color: #064E3B !important;
     }
 
     /* Hero Section */
@@ -2369,8 +2437,8 @@ p {
     }
 
     .logo-enterprise-badge {
-        font-size: 0.58rem;
-        padding: 2px 5px;
+        font-size: 0.5rem;
+        padding: 1px 4px;
     }
 
     /* Hero */
@@ -2468,10 +2536,38 @@ p {
         padding: 35px 0;
     }
 
+    .pillars-grid,
     .metrics-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        margin-bottom: 18px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .pillar-card {
+        padding: 18px 16px;
+        border-radius: 14px;
+    }
+
+    .pillar-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+    }
+
+    .pillar-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .pillar-title {
+        font-size: 0.98rem;
+        margin-bottom: 4px;
+    }
+
+    .pillar-desc {
+        font-size: 0.82rem;
+        line-height: 1.48;
     }
 
     .metric-card {
@@ -2615,6 +2711,7 @@ p {
 
 /* 4. Extra-Small Devices (<= 360px) */
 @media (max-width: 360px) {
+    .pillars-grid,
     .metrics-grid {
         grid-template-columns: 1fr;
     }
