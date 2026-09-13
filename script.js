@@ -1,149 +1,213 @@
-// Configuración del carrusel del Hero
-const heroData = [
-    {
-        text: "Estandarice la logística alimentaria y mejore la experiencia de sus colaboradores.",
-        desktop: "assets/kitchen-monitor.png",
-        mobile: "assets/ticket.png"
-    },
-    {
-        text: "Gestione menús inteligentes y centralice sus fichas técnicas/recetarios.",
-        desktop: "assets/item-recipe.png",
-        mobile: null
-    },
-    {
-        text: "Optimice el flujo de comensales mediante una gestión de turnos eficiente.",
-        desktop: "assets/hours.png",
-        mobile: null
-    },
-    {
-        text: "Personalice la oferta gastronómica según la franja horaria y sede.",
-        desktop: "assets/shift-menu.png",
-        mobile: null
-    },
-    {
-        text: "Tome decisiones basadas en datos con analítica de costos en tiempo real.",
-        desktop: "assets/costos.png",
-        mobile: null
+/**
+ * TICMEAL ENTERPRISE - B2B INTERACTIVITY & LOGIC
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    /* ==========================================================================
+       1. PERSONA TAB SWITCHER
+       ========================================================================== */
+    const personaTabs = document.querySelectorAll('.persona-tab');
+    const personaPanels = document.querySelectorAll('.persona-panel');
+
+    if (personaTabs.length && personaPanels.length) {
+        personaTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active state from all tabs & panels
+                personaTabs.forEach(t => t.classList.remove('active'));
+                personaPanels.forEach(p => p.classList.remove('active'));
+
+                // Activate clicked tab
+                tab.classList.add('active');
+
+                // Activate corresponding panel
+                const targetId = tab.getAttribute('data-target');
+                const targetPanel = document.getElementById(targetId);
+                if (targetPanel) {
+                    targetPanel.classList.add('active');
+                }
+            });
+        });
     }
-];
 
-let currentIndex = 0;
-const heroText = document.getElementById('hero-text');
-const desktopImg = document.getElementById('hero-desktop-img');
-const mobileImg = document.getElementById('hero-mobile-img');
-const mobileFrame = mobileImg ? mobileImg.parentElement : null;
+    /* ==========================================================================
+       2. INTERACTIVE ROI & FOOD WASTE REDUCTION CALCULATOR
+       ========================================================================== */
+    const calcDiners = document.getElementById('calc-diners');
+    const calcMealCost = document.getElementById('calc-meal-cost');
+    const calcWaste = document.getElementById('calc-waste');
 
-function updateHero() {
-    currentIndex = (currentIndex + 1) % heroData.length;
-    const data = heroData[currentIndex];
+    const dinersVal = document.getElementById('diners-val');
+    const costVal = document.getElementById('cost-val');
+    const wasteVal = document.getElementById('waste-val');
 
-    // Aplicar transiciones suaves
-    if (heroText) heroText.style.opacity = 0;
-    if (desktopImg) desktopImg.style.opacity = 0;
-    if (mobileFrame) mobileFrame.style.opacity = 0;
+    const savingsDisplay = document.getElementById('calc-savings-display');
+    const hoursDisplay = document.getElementById('calc-hours-display');
+    const mealsDisplay = document.getElementById('calc-meals-display');
+    const btnTransferRoi = document.getElementById('btn-transfer-roi');
 
-    setTimeout(() => {
-        if (heroText) heroText.textContent = data.text;
-        if (desktopImg && data.desktop) desktopImg.src = data.desktop;
+    function updateCalculator() {
+        if (!calcDiners || !calcMealCost || !calcWaste) return;
+
+        const diners = parseInt(calcDiners.value, 10) || 400;
+        const cost = parseFloat(calcMealCost.value) || 5.5;
+        const wastePct = parseInt(calcWaste.value, 10) || 18;
+
+        // Update slider value tags
+        if (dinersVal) dinersVal.textContent = `${diners.toLocaleString('es-ES')} personas`;
+        if (costVal) costVal.textContent = `$${cost.toFixed(2)} USD`;
+        if (wasteVal) wasteVal.textContent = `${wastePct}%`;
+
+        // Mathematical model:
+        // Standard operational days per year: 250
+        const annualMeals = diners * 250;
+        const annualFoodBudget = annualMeals * cost;
+        const currentWasteFraction = wastePct / 100;
         
-        if (data.mobile && mobileFrame && mobileImg) {
-            mobileImg.src = data.mobile;
-            mobileFrame.style.display = 'block';
-            setTimeout(() => mobileFrame.style.opacity = 1, 50);
-        } else if (mobileFrame) {
-            mobileFrame.style.display = 'none';
+        // TicMeal verified average waste reduction rate: 40% of baseline shrinkage
+        const annualSavingsUSD = annualFoodBudget * currentWasteFraction * 0.40;
+        
+        // Meals saved from garbage:
+        const mealsRescued = Math.round(annualMeals * currentWasteFraction * 0.40);
+        
+        // Operational hours saved (menu engineering, lot auditing, purchase forecasting):
+        // Approx 1.5h per business day
+        const hoursSaved = Math.round(250 * 1.5);
+
+        // Update results in DOM
+        if (savingsDisplay) {
+            savingsDisplay.textContent = `$${Math.round(annualSavingsUSD).toLocaleString('es-ES')} USD`;
         }
-
-        if (heroText) heroText.style.opacity = 1;
-        if (desktopImg) desktopImg.style.opacity = 1;
-    }, 500);
-}
-
-// Iniciar intervalo del hero
-if (heroText || desktopImg) {
-    setInterval(updateHero, 5000);
-}
-
-// Intersection Observer para animaciones al hacer scroll
-const observerOptions = {
-    threshold: 0.15,
-    rootMargin: "0px 0px -50px 0px"
-};
-
-const appearanceObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
+        if (hoursDisplay) {
+            hoursDisplay.textContent = `${hoursSaved.toLocaleString('es-ES')} hrs / año`;
         }
-    });
-}, observerOptions);
+        if (mealsDisplay) {
+            mealsDisplay.textContent = `${mealsRescued.toLocaleString('es-ES')} viandas`;
+        }
+    }
 
-document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    appearanceObserver.observe(el);
-});
+    if (calcDiners && calcMealCost && calcWaste) {
+        [calcDiners, calcMealCost, calcWaste].forEach(slider => {
+            slider.addEventListener('input', updateCalculator);
+        });
+        updateCalculator();
+    }
 
-// Lógica para el Sticky Scroll de Features
-const stickyImg = document.getElementById('sticky-img');
-const featureItems = document.querySelectorAll('.feature-item');
+    // Transfer ROI metrics into the Lead Form
+    if (btnTransferRoi) {
+        btnTransferRoi.addEventListener('click', () => {
+            const diners = calcDiners ? calcDiners.value : 400;
+            const savingsText = savingsDisplay ? savingsDisplay.textContent : '$39,600 USD';
+            
+            const contactSection = document.getElementById('contact');
+            const leadDiners = document.getElementById('lead-diners');
+            const leadMessage = document.getElementById('lead-mensaje');
 
-const stickyObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            // Actualizar imagen
-            const newImg = entry.target.getAttribute('data-img');
-            if (stickyImg && newImg) {
-                stickyImg.style.opacity = 0;
-                stickyImg.style.transform = 'scale(0.95)';
-                
-                setTimeout(() => {
-                    stickyImg.src = newImg;
-                    stickyImg.style.opacity = 1;
-                    stickyImg.style.transform = 'scale(1)';
-                }, 300);
+            // Select nearest scale in lead dropdown
+            if (leadDiners) {
+                const dinersNum = parseInt(diners, 10);
+                if (dinersNum < 150) {
+                    leadDiners.value = "Menos de 150 comensales";
+                } else if (dinersNum <= 500) {
+                    leadDiners.value = "150 a 500 comensales";
+                } else if (dinersNum <= 1500) {
+                    leadDiners.value = "500 a 1,500 comensales";
+                } else {
+                    leadDiners.value = "Más de 1,500 comensales (Multi-Sede)";
+                }
             }
 
-            // Resaltar texto
-            featureItems.forEach(item => item.classList.remove('active-scroll'));
-            entry.target.classList.add('active-scroll');
-        }
-    });
-}, {
-    threshold: 0.6
-});
+            // Auto-populate message textarea
+            if (leadMessage) {
+                leadMessage.value = `Hola equipo de TicMeal, calculé en el simulador un ahorro anual proyectado de ${savingsText} para ${diners} comensales diarios. Me gustaría agendar una demo de 15 minutos y recibir el diagnóstico detallado para nuestra sede.`;
+            }
 
-featureItems.forEach(item => {
-    stickyObserver.observe(item);
-});
+            // Smooth scroll to contact
+            if (contactSection) {
+                contactSection.scrollIntoView({ behavior: 'smooth' });
+                const nameInput = document.getElementById('lead-nombre');
+                if (nameInput) {
+                    setTimeout(() => nameInput.focus(), 600);
+                }
+            }
+        });
+    }
 
-// Efecto de transparencia en el Navbar al hacer scroll
-function checkScroll() {
-    const nav = document.querySelector('.navbar');
-    if (nav) {
-        if (window.scrollY > 50) {
-            nav.classList.add('scrolled');
+    /* ==========================================================================
+       3. NAVBAR SCROLL EFFECT
+       ========================================================================== */
+    const navbar = document.querySelector('.navbar');
+    function handleNavbarScroll() {
+        if (!navbar) return;
+        if (window.scrollY > 40) {
+            navbar.classList.add('scrolled');
         } else {
-            nav.classList.remove('scrolled');
+            navbar.classList.remove('scrolled');
         }
     }
-}
-window.addEventListener('scroll', checkScroll);
-window.addEventListener('DOMContentLoaded', checkScroll);
+    window.addEventListener('scroll', handleNavbarScroll, { passive: true });
+    handleNavbarScroll();
 
-// Mobile navigation toggle menu drawer
-const navToggle = document.querySelector('.nav-toggle');
-const navLinks = document.querySelector('.nav-links');
+    /* ==========================================================================
+       4. MOBILE NAVIGATION DRAWER
+       ========================================================================== */
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
 
-if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-        navToggle.classList.toggle('open');
-        navLinks.classList.toggle('open');
-    });
-
-    // Close menu when clicking a link
-    navLinks.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            navToggle.classList.remove('open');
-            navLinks.classList.remove('open');
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navToggle.classList.toggle('open');
+            navLinks.classList.toggle('open');
         });
-    });
-}
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
+        });
+    }
+
+    /* ==========================================================================
+       5. INTERSECTION OBSERVER FOR ON-SCROLL ANIMATIONS
+       ========================================================================== */
+    const animateElements = document.querySelectorAll('.animate-on-scroll');
+    if ('IntersectionObserver' in window && animateElements.length) {
+        const appearObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
+        });
+
+        animateElements.forEach(el => appearObserver.observe(el));
+    } else {
+        // Fallback for older browsers
+        animateElements.forEach(el => el.classList.add('visible'));
+    }
+
+    /* ==========================================================================
+       6. FORM SUBMISSION FEEDBACK
+       ========================================================================== */
+    const contactForm = document.getElementById('b2b-lead-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function() {
+            const submitBtn = contactForm.querySelector('.submit-btn');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerHTML = `
+                    <svg style="width: 20px; height: 20px; animation: spin 1s linear infinite; margin-right: 8px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12a9 9 0 1 1-6.219-8.56"></path>
+                    </svg>
+                    <span>Enviando solicitud...</span>
+                `;
+            }
+        });
+    }
+
+});

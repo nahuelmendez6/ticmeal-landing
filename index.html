@@ -3,210 +3,809 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TicMeal | Gestión Inteligente de Comedores Institucionales</title>
-    <link rel="icon" href="assets/pwa-192x192.png   " type="image/png">
+    <title>TicMeal Enterprise | Plataforma Integral de Gestión de Comedores con IA</title>
+    <meta name="description" content="Plataforma SaaS B2B integral para comedores corporativos e institucionales. Planificación de menús con Inteligencia Artificial, control de costos FIFO por lote, despacho KDS en tiempo real y seguridad multi-tenant.">
+    <link rel="icon" href="assets/pwa-192x192.png" type="image/png">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="light-theme">
 
+    <!-- Top Announcement Bar -->
+    <div class="top-announcement">
+        <div class="container announcement-content">
+            <span class="announcement-pill">Nuevo</span>
+            <span>Descubra el Copiloto de IA Gastronómica impulsado por Google Gemini para planificar menús en segundos.</span>
+            <a href="#copiloto-ia" class="announcement-link">Conocer más &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <div class="logo">
-                <img src="assets/logo-navbar.png" alt="TicMeal Logo">
-            </div>
+            <a href="#" class="logo">
+                <img src="assets/logo-navbar.png" alt="TicMeal Enterprise Logo">
+                <span class="logo-enterprise-badge">Enterprise</span>
+            </a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span class="hamburger"></span>
             </button>
             <ul class="nav-links">
-                <li><a href="#about">Solución</a></li>
-                <li><a href="#features">Funciones</a></li>
-                <li><a href="#contact" class="btn-primary">Solicitar Demo</a></li>
+                <li><a href="#solucion">Solución</a></li>
+                <li><a href="#copiloto-ia">Copiloto IA</a></li>
+                <li><a href="#roles">Por Rol</a></li>
+                <li><a href="#plataforma">Plataforma</a></li>
+                <li><a href="#calculadora">Calculadora ROI</a></li>
+                <li><a href="#seguridad">Seguridad</a></li>
+                <li><a href="#contact" class="btn-primary nav-cta">Solicitar Demo</a></li>
             </ul>
         </div>
     </nav>
 
-    <header class="hero">
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
         <video autoplay loop muted playsinline class="hero-video">
             <source src="assets/header-video.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay"></div>
         <div class="container hero-container">
-            <div class="hero-content animate-on-load">
-                <div class="badge">Innovación en Gestión Gastronómica</div>
-                <h1 class="title">La plataforma integral para la gestión de comedores corporativos.</h1>
-                <p id="hero-text">Optimice la logística alimentaria, reduzca el desperdicio y mejore la experiencia de sus colaboradores.</p>
-            </div>
-            <div class="hero-btns-bottom animate-on-load">
-                <a href="#contact" class="btn-primary btn-glow">Agendar Consultoría</a>
-                <a href="#features" class="btn-secondary btn-glow">Ver Funciones</a>
+            <div class="hero-grid">
+                <!-- Left: Headline & CTAs -->
+                <div class="hero-content animate-on-load">
+                    <div class="badge-ai">
+                        <span class="badge-pulse"></span>
+                        <span>IA Gastronómica &bull; Arquitectura Multi-Tenant</span>
+                    </div>
+                    <h1 class="hero-title">El software integral para transformar comedores corporativos en operaciones rentables.</h1>
+                    <p class="hero-subtitle">Automatice la planificación de menús con Inteligencia Artificial, reduzca hasta un 25% de desperdicio con costeo FIFO por lote y garantice cero filas con despacho KDS en tiempo real.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn-primary btn-glow">Agendar Demo Personalizada (15 min)</a>
+                        <a href="#calculadora" class="btn-secondary btn-glow">Calcular Ahorro de mi Comedor</a>
+                    </div>
+
+                    <div class="hero-trust-indicators">
+                        <div class="trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Aislamiento Multi-Tenant</span>
+                        </div>
+                        <div class="trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Despacho KDS en Tiempo Real</span>
+                        </div>
+                        <div class="trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Trazabilidad Normas HACCP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Composite Live Product Showcase -->
+                <div class="hero-showcase animate-on-load">
+                    <div class="showcase-card showcase-main">
+                        <div class="showcase-header">
+                            <div class="window-dots">
+                                <span class="dot dot-red"></span>
+                                <span class="dot dot-yellow"></span>
+                                <span class="dot dot-green"></span>
+                            </div>
+                            <span class="showcase-title-tag">Monitor KDS Cocina &bull; Tiempo Real</span>
+                            <span class="status-live-chip"><span class="pulse-green"></span> Conectado</span>
+                        </div>
+                        <div class="showcase-body">
+                            <img src="assets/kitchen-monitor.png" alt="Monitor KDS de Cocina en Tiempo Real" class="showcase-img">
+                        </div>
+                    </div>
+
+                    <!-- Floating Mobile Pass Card -->
+                    <div class="showcase-floating-card card-mobile floating">
+                        <div class="floating-badge">Autogestión Móvil</div>
+                        <img src="assets/ticket.png" alt="Ticket Digital con QR y DNI" class="floating-ticket-img">
+                        <div class="floating-caption">
+                            <strong>Pase Digital QR</strong>
+                            <span>Validación en &lt; 3 seg</span>
+                        </div>
+                    </div>
+
+                    <!-- Floating KPI Card -->
+                    <div class="showcase-floating-card card-kpi floating-delayed">
+                        <div class="kpi-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+                        </div>
+                        <div class="kpi-info">
+                            <span class="kpi-label">Control de Merma FIFO</span>
+                            <span class="kpi-value">-22.4%</span>
+                            <span class="kpi-sub">Ahorro en costo de insumo</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="about" id="about">
+    <!-- Social Proof & Quantified Enterprise Impact Bar -->
+    <section class="social-proof-bar" id="solucion">
+        <div class="container">
+            <p class="proof-lead">Optimización operativa comprobada en plantas industriales, centros corporativos y empresas de catering</p>
+            <div class="metrics-grid">
+                <div class="metric-card animate-on-scroll">
+                    <span class="metric-number">+250,000</span>
+                    <span class="metric-label">Raciones Corporativas Gestionadas</span>
+                </div>
+                <div class="metric-card animate-on-scroll">
+                    <span class="metric-number">-22%</span>
+                    <span class="metric-label">Reducción en Desperdicio de Insumos</span>
+                </div>
+                <div class="metric-card animate-on-scroll">
+                    <span class="metric-number">&lt; 3 seg</span>
+                    <span class="metric-label">Tiempo de Validación (DNI / PIN)</span>
+                </div>
+                <div class="metric-card animate-on-scroll">
+                    <span class="metric-number">100%</span>
+                    <span class="metric-label">Cumplimiento Dietario &amp; Alérgenos</span>
+                </div>
+            </div>
+
+            <!-- Target Industry Tags -->
+            <div class="industry-pills animate-on-scroll">
+                <span class="industry-pill">🏭 Plantas Industriales &amp; Manufactura</span>
+                <span class="industry-pill">🏢 Parques Tecnológicos &amp; Corporativos</span>
+                <span class="industry-pill">👨‍🍳 Concesionarios de Catering Institucional</span>
+                <span class="industry-pill">🏥 Clínicas, Sanatorios &amp; Educación</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Copilot Showcase (Gemini Powered) -->
+    <section class="ai-feature-section" id="copiloto-ia">
+        <div class="container">
+            <div class="ai-banner glass animate-on-scroll">
+                <div class="ai-banner-grid">
+                    <div class="ai-banner-content">
+                        <div class="badge-ai">
+                            <span class="badge-pulse"></span>
+                            <span>Módulo de Inteligencia Artificial Exclusivo</span>
+                        </div>
+                        <h2 class="gradient-text">Copiloto de IA Gastronómica</h2>
+                        <p class="ai-lead">Planifique semanas de servicio multi-turno en segundos con la asistencia de Google Gemini 2.5 Flash, reduciendo hasta un 80% el tiempo de ingeniería de menús.</p>
+                        
+                        <div class="ai-points">
+                            <div class="ai-point">
+                                <div class="ai-point-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                                </div>
+                                <div>
+                                    <h4>Inferencia Automática de Mermas y Rendimientos</h4>
+                                    <p>La IA calcula factores de rendimiento térmico, tabla nutricional y consolidación de alérgenos a partir del insumo en catálogo.</p>
+                                </div>
+                            </div>
+
+                            <div class="ai-point">
+                                <div class="ai-point-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                                </div>
+                                <div>
+                                    <h4>Grounding Estricto de Catálogo (Cero Platos Fantasma)</h4>
+                                    <p>El planificador solo utiliza platos con stock verificado en su inventario. Si faltan opciones aptas para comensales celíacos o diabéticos, emite alertas preventivas.</p>
+                                </div>
+                            </div>
+
+                            <div class="ai-point">
+                                <div class="ai-point-icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                                </div>
+                                <div>
+                                    <h4>Planificación Guiada por el Censo Dietario</h4>
+                                    <p>El algoritmo lee las observaciones médicas de los comensales (alergias, celiaquía, diabetes, veganismo) y estructura turnos seguros para cada colaborador.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <a href="#contact" class="btn-primary btn-glow">Solicitar Demostración de IA</a>
+                    </div>
+
+                    <div class="ai-banner-visual">
+                        <div class="code-preview-mockup">
+                            <div class="preview-header">
+                                <span class="preview-dot"></span>
+                                <span class="preview-title">Gemini AI Menu &amp; Recipe Engine</span>
+                                <span class="preview-badge">Grounding Activo</span>
+                            </div>
+                            <img src="assets/item-recipe.png" alt="Ficha Técnica Inteligente con Cálculo de Costos y Alérgenos" class="ai-preview-img">
+                            <div class="ai-output-badge">
+                                <div class="badge-icon">✨</div>
+                                <div>
+                                    <strong>Ficha técnica generada en 2.4s</strong>
+                                    <span>Vinculada con lotes existentes y cálculo FIFO exacto</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Persona Switcher Section -->
+    <section class="persona-section" id="roles">
         <div class="container">
             <div class="section-header text-center animate-on-scroll">
-                <h2 class="gradient-text">Eficiencia operativa en cada servicio.</h2>
-                <p class="section-subtitle">TicMeal es la solución tecnológica diseñada para transformar la gestión gastronómica en entornos institucionales.</p>
+                <div class="badge">Adaptabilidad Institucional</div>
+                <h2 class="gradient-text">Una plataforma diseñada para cada tomador de decisiones</h2>
+                <p class="section-subtitle">Descubra cómo TicMeal resuelve los desafíos específicos de cada área de su empresa.</p>
             </div>
-            
-            <div class="about-grid">
-                <div class="about-card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+
+            <!-- Role Tabs -->
+            <div class="persona-tabs animate-on-scroll">
+                <button class="persona-tab active" data-target="panel-cfo">
+                    <span class="tab-icon">💼</span>
+                    <span>CFO &amp; Finanzas</span>
+                </button>
+                <button class="persona-tab" data-target="panel-ops">
+                    <span class="tab-icon">🍳</span>
+                    <span>Cocina &amp; Operaciones</span>
+                </button>
+                <button class="persona-tab" data-target="panel-hr">
+                    <span class="tab-icon">👥</span>
+                    <span>RRHH &amp; Bienestar</span>
+                </button>
+                <button class="persona-tab" data-target="panel-catering">
+                    <span class="tab-icon">🍽️</span>
+                    <span>Empresas de Catering</span>
+                </button>
+            </div>
+
+            <!-- Role Panels Container -->
+            <div class="persona-panels-wrapper">
+                <!-- Panel 1: CFO -->
+                <div class="persona-panel active" id="panel-cfo">
+                    <div class="persona-grid">
+                        <div class="persona-copy">
+                            <span class="persona-role-badge">Para Directores de Finanzas &amp; Compras</span>
+                            <h3>Control presupuestario estricto, costeo FIFO por lote y cero fugas operativas.</h3>
+                            <p>Elimine los desvíos entre compras presupuestadas y consumos reales. TicMeal aplica cálculo FIFO a cada ración considerando mermas de cocción y generando auditorías de inventario automáticas.</p>
+                            
+                            <ul class="persona-checklist">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Costeo teórico vs. real:</strong> Monitoreo de desviaciones en tiempo real por cada plato producido.</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Auditorías monetizadas de mermas:</strong> Registro con motivo y lote exacto para erradicar pérdidas invisibles.</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Proyecciones de compras certeras:</strong> Abastecimiento basado en censos reales de consumo histórico.</span>
+                                </li>
+                            </ul>
+
+                            <div class="persona-cta-wrap">
+                                <a href="#calculadora" class="btn-primary btn-glow">Calcular Retorno de Inversión</a>
+                            </div>
+                        </div>
+                        <div class="persona-visual">
+                            <div class="persona-mockup-frame">
+                                <img src="assets/costos.png" alt="Reporte de Costos y Rentabilidad FIFO">
+                                <div class="persona-caption">Panel Financiero: Costo Unitario FIFO &amp; Comparativo de Rendimiento</div>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Gestión de Aforos</h4>
-                    <p>Control preciso de la capacidad y flujo de personas.</p>
-                </div>
-                
-                <div class="about-card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"></path><path d="M7 2v20"></path><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"></path></svg>
-                    </div>
-                    <h4>Ingeniería de Menú</h4>
-                    <p>Diseño inteligente de platos y balances nutricionales.</p>
                 </div>
 
-                <div class="about-card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path></svg>
+                <!-- Panel 2: Operaciones -->
+                <div class="persona-panel" id="panel-ops">
+                    <div class="persona-grid">
+                        <div class="persona-copy">
+                            <span class="persona-role-badge">Para Jefes de Cocina &amp; Gerentes Operativos</span>
+                            <h3>Despacho KDS en vivo: cocina sincronizada, cero papel y ritmo constante.</h3>
+                            <p>Transforme el caos del horario pico en una línea de montaje ordenada. Los pedidos de los colaboradores ingresan automáticamente a las pantallas de cocina organizados por orden de llegada y turnos.</p>
+                            
+                            <ul class="persona-checklist">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>KDS en tiempo real con WebSockets:</strong> Despacho sincronizado por sede sin demoras ni errores de comanda.</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Alertas automáticas de stock bajo:</strong> Notificaciones tempranas antes de que ocurra un quiebre en la línea de servicio.</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Estandarización de fichas técnicas:</strong> Gramajes, ingredientes y pasos de elaboración unificados para todo el personal.</span>
+                                </li>
+                            </ul>
+
+                            <div class="persona-cta-wrap">
+                                <a href="#contact" class="btn-primary btn-glow">Ver Demo del Monitor KDS</a>
+                            </div>
+                        </div>
+                        <div class="persona-visual">
+                            <div class="persona-mockup-frame">
+                                <img src="assets/kitchen-monitor.png" alt="Monitor KDS de Cocina en Vivo">
+                                <div class="persona-caption">Pantalla KDS en Tiempo Real con Indicadores de Preparación</div>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Despacho Digital</h4>
-                    <p>Sincronización en tiempo real entre pedido y cocina.</p>
                 </div>
 
-                <div class="about-card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                <!-- Panel 3: RRHH -->
+                <div class="persona-panel" id="panel-hr">
+                    <div class="persona-grid">
+                        <div class="persona-copy">
+                            <span class="persona-role-badge">Para Directores de RRHH &amp; Experiencia del Empleado</span>
+                            <h3>Almuerzos ágiles, sin filas y con nutrición 100% segura para cada colaborador.</h3>
+                            <p>Garantice que el descanso del personal sea reparador y no un laberinto de esperas. Su equipo autogestiona su vianda desde el teléfono o valida su ración en segundos con su DNI o PIN corporativo.</p>
+                            
+                            <ul class="persona-checklist">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Validación veloz en menos de 3 segundos:</strong> Acceso ágil mediante credencial, PIN o código QR dinámico.</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Blindaje ante restricciones médicas:</strong> Bloqueo proactivo de platos para colaboradores celíacos, diabéticos o alérgicos.</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Gestión fluida de turnos:</strong> Distribución equitativa de la demanda para evitar saturaciones en el comedor.</span>
+                                </li>
+                            </ul>
+
+                            <div class="persona-cta-wrap">
+                                <a href="#contact" class="btn-primary btn-glow">Agendar Piloto en Comedor</a>
+                            </div>
+                        </div>
+                        <div class="persona-visual">
+                            <div class="persona-mockup-frame">
+                                <img src="assets/hours.png" alt="Planificación de Turnos y Aforos">
+                                <div class="persona-caption">Distribución Inteligente de Comensales por Ventana Horaria</div>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Control Dietario</h4>
-                    <p>Personalización de la oferta según necesidades médicas.</p>
                 </div>
 
-                <div class="about-card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-4-4-3 3"></path></svg>
-                    </div>
-                    <h4>Trazabilidad</h4>
-                    <p>Seguimiento completo desde el insumo hasta el plato.</p>
-                </div>
+                <!-- Panel 4: Concesionarios de Catering -->
+                <div class="persona-panel" id="panel-catering">
+                    <div class="persona-grid">
+                        <div class="persona-copy">
+                            <span class="persona-role-badge">Para Concesionarios &amp; Empresas de Catering</span>
+                            <h3>La infraestructura Multi-Tenant para operar múltiples clientes con rentabilidad garantizada.</h3>
+                            <p>Gestione decenas de clientes corporativos e industriales desde una única plataforma centralizada. Asegure el cumplimiento de los contratos de servicio (SLA) y ofrezca total transparencia a sus clientes.</p>
+                            
+                            <ul class="persona-checklist">
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Aislamiento estricto por cliente:</strong> Cada contrato cuenta con su propio catálogo, turnos, inventario y reglas de acceso.</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Reportes ejecutivos automáticos:</strong> Entregue métricas transparentes de raciones servidas y mermas a la empresa cliente.</span>
+                                </li>
+                                <li>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    <span><strong>Escalabilidad sin fricción técnica:</strong> Despliegue nuevos comedores en menos de 48 horas sin costo adicional de desarrollo.</span>
+                                </li>
+                            </ul>
 
-                <div class="about-card animate-on-scroll">
-                    <div class="card-icon">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                            <div class="persona-cta-wrap">
+                                <a href="#contact" class="btn-primary btn-glow">Solicitar Alianza Comercial</a>
+                            </div>
+                        </div>
+                        <div class="persona-visual">
+                            <div class="persona-mockup-frame">
+                                <img src="assets/shift-menu.png" alt="Gestión de Menús por Sede y Cliente">
+                                <div class="persona-caption">Consola Centralizada: Catálogos de Menú por Sede y Turno</div>
+                            </div>
+                        </div>
                     </div>
-                    <h4>Analítica BI</h4>
-                    <p>Dashboards estratégicos para decisiones informadas.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="features-sticky" id="features">
-        <div class="container sticky-wrapper">
-            <div class="sticky-visual animate-on-scroll">
-                <div class="mockup-container">
-                    <!-- Estos elementos cambiarán dinámicamente con el scroll -->
-                    <img src="assets/stock-report.png" alt="App Preview" class="active" id="sticky-img">
-                    <div class="glow-effect"></div>
-                </div>
+    <!-- Bento Grid: Core Capabilities -->
+    <section class="platform-bento-section" id="plataforma">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <div class="badge">Ecosistema Tecnológico</div>
+                <h2 class="gradient-text">Ingeniería de software al servicio de la alimentación institucional</h2>
+                <p class="section-subtitle">Arquitectura modular integrada para controlar cada aspecto operativo y financiero de su servicio gastronómico.</p>
             </div>
-            <div class="sticky-content">
-                <div class="feature-item animate-on-scroll" data-img="assets/stock-report.png">
-                    <h3>Visibilidad de Inventario</h3>
-                    <img src="assets/stock-report.png" alt="Visibilidad de Inventario" class="mobile-feature-img">
-                    <p>Automatice la trazabilidad de insumos y evite quiebres de stock. El sistema descuenta existencias en tiempo real con cada orden confirmada.</p>
+
+            <div class="bento-grid">
+                <!-- Bento 1: AI Planner (Large Span 2) -->
+                <div class="bento-card bento-span-2 animate-on-scroll">
+                    <div class="bento-card-content">
+                        <div class="bento-pill">✨ Inteligencia Artificial</div>
+                        <h3>Copiloto de Menús y Recetas Inteligentes</h3>
+                        <p>Diseño automático de ofertas gastronómicas multi-turno. Cruce instantáneo de existencias de inventario con las restricciones médicas de sus comensales para una planificación sin fallas.</p>
+                        <div class="bento-tags">
+                            <span>Gemini 2.5 Flash</span>
+                            <span>Grounding de Stock</span>
+                            <span>Cálculo de Mermas</span>
+                        </div>
+                    </div>
+                    <div class="bento-card-image">
+                        <img src="assets/item-recipe.png" alt="Ingeniería de Recetas con IA">
+                    </div>
                 </div>
-                <div class="feature-item animate-on-scroll" data-img="assets/stock.png">
-                    <h3>Business Intelligence</h3>
-                    <img src="assets/stock.png" alt="Business Intelligence" class="mobile-feature-img">
-                    <p>Identifique patrones de consumo, horas pico y rentabilidad por plato mediante tableros de control diseñados para la toma de decisiones.</p>
+
+                <!-- Bento 2: FIFO Lot Inventory (Span 1) -->
+                <div class="bento-card bento-span-1 animate-on-scroll">
+                    <div class="bento-card-content">
+                        <div class="bento-pill">📦 Trazabilidad Total</div>
+                        <h3>Inventario por Lotes &amp; FIFO</h3>
+                        <p>Descuento automatizado de existencias lote a lote con cada ración consumida. Alertas preventivas por fecha de caducidad.</p>
+                    </div>
+                    <div class="bento-card-image">
+                        <img src="assets/stock-report.png" alt="Trazabilidad por Lotes e Inventario">
+                    </div>
                 </div>
-                <div class="feature-item animate-on-scroll" data-img="assets/phone-ticket.png">
-                    <h3>Autogestión de Pedidos</h3>
-                    <img src="assets/phone-ticket.png" alt="Autogestión de Pedidos" class="mobile-feature-img">
-                    <p>Digitalice la demanda permitiendo que el colaborador gestione su reserva desde el móvil, eliminando esperas y filas innecesarias.</p>
+
+                <!-- Bento 3: Real-Time KDS (Span 1) -->
+                <div class="bento-card bento-span-1 animate-on-scroll">
+                    <div class="bento-card-content">
+                        <div class="bento-pill">⚡ Despacho Ágil</div>
+                        <h3>KDS en Tiempo Real</h3>
+                        <p>Sincronización bidireccional por WebSockets entre la comanda del colaborador y el monitor de preparación de cocina.</p>
+                    </div>
+                    <div class="bento-card-image">
+                        <img src="assets/kitchen-monitor.png" alt="Despacho en Cocina KDS">
+                    </div>
                 </div>
-                <div class="feature-item animate-on-scroll" data-img="assets/kitchen.png">
-                    <h3>Optimización del Despacho</h3>
-                    <img src="assets/kitchen.png" alt="Optimización del Despacho" class="mobile-feature-img">
-                    <p>Incremente la productividad del staff de cocina con una interfaz visual que organiza las prioridades de entrega de manera automática.</p>
+
+                <!-- Bento 4: Shifts & Capacity (Large Span 2) -->
+                <div class="bento-card bento-span-2 animate-on-scroll">
+                    <div class="bento-card-content">
+                        <div class="bento-pill">⏰ Operación 24/7</div>
+                        <h3>Planificación Multi-Turno &amp; Aforos Dinámicos</h3>
+                        <p>Adaptado a plantas fabriles con turnos rotativos. El sistema actualiza automáticamente el menú activo por zona horaria y resetea la producción diaria a las 01:00 AM.</p>
+                        <div class="bento-tags">
+                            <span>Turnos Rotativos</span>
+                            <span>Control de Aforo</span>
+                            <span>Reset Automático</span>
+                        </div>
+                    </div>
+                    <div class="bento-card-image">
+                        <img src="assets/shifts.png" alt="Planificación de Turnos y Aforos">
+                    </div>
                 </div>
-                <div class="feature-item animate-on-scroll" data-img="assets/shifts.png">
-                    <h3>Planificación de Turnos</h3>
-                    <img src="assets/shifts.png" alt="Planificación de Turnos" class="mobile-feature-img">
-                    <p>Gestione la capacidad instalada configurando franjas horarias inteligentes para garantizar un flujo constante y seguro de personas.</p>
+
+                <!-- Bento 5: Food Waste Audit (Span 1) -->
+                <div class="bento-card bento-span-1 animate-on-scroll">
+                    <div class="bento-card-content">
+                        <div class="bento-pill">🌱 Sostenibilidad &amp; Costos</div>
+                        <h3>Auditoría y Registro de Mermas</h3>
+                        <p>Monitoree las causas de desperdicio por lote exacto con impacto monetario cuantificado para auditorías ambientales y financieras.</p>
+                    </div>
+                    <div class="bento-card-image">
+                        <img src="assets/stock.png" alt="Auditoría de Mermas y Desperdicio">
+                    </div>
                 </div>
-                <div class="feature-item animate-on-scroll" data-img="assets/menu-options.png">
-                    <h3>Estandarización de Recetas</h3>
-                    <img src="assets/menu-options.png" alt="Estandarización de Recetas" class="mobile-feature-img">
-                    <p>Centralice sus fichas técnicas y costos. Cargue opciones de menú dinámicas asegurando la consistencia en cada servicio.</p>
+
+                <!-- Bento 6: Allergen & Medical Safeguard (Span 1) -->
+                <div class="bento-card bento-span-1 animate-on-scroll">
+                    <div class="bento-card-content">
+                        <div class="bento-pill">🩺 Seguridad Médica</div>
+                        <h3>Matriz de Alérgenos</h3>
+                        <p>Protección contra contaminaciones cruzadas y selección no autorizada de platos incompatibles con la salud del comensal.</p>
+                    </div>
+                    <div class="bento-card-image">
+                        <img src="assets/menu-options.png" alt="Opciones de Menú y Control Dietario">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- How It Works (3-Step Implementation Lifecycle) -->
+    <section class="how-it-works-section" id="como-funciona">
+        <div class="container">
+            <div class="section-header text-center animate-on-scroll">
+                <div class="badge">Despliegue Ágil</div>
+                <h2 class="gradient-text">Implementación sin interrupciones en 3 pasos</h2>
+                <p class="section-subtitle">Diseñado para activarse en su comedor en menos de 48 horas sin fricción para el personal ni la cocina.</p>
+            </div>
+
+            <div class="steps-grid">
+                <!-- Step 1 -->
+                <div class="step-card animate-on-scroll">
+                    <div class="step-badge">Paso 01</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h4>Carga de Catálogo e Insumos con IA</h4>
+                    <p>Importe sus materias primas, costos y proveedores. El copiloto de IA asiste en la creación de fichas técnicas estandarizadas y rendimientos térmicos en cuestión de minutos.</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="step-card animate-on-scroll">
+                    <div class="step-badge">Paso 02</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    </div>
+                    <h4>Censo Dietario &amp; Turnos por Sede</h4>
+                    <p>Configure las ventanas horarias de sus sedes y registre las restricciones médicas de sus colaboradores (celiaquía, diabetes, alergias) para blindar el servicio.</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="step-card animate-on-scroll">
+                    <div class="step-badge">Paso 03</div>
+                    <div class="step-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+                    </div>
+                    <h4>Operación en Vivo &amp; Analítica BI</h4>
+                    <p>Los colaboradores validan en segundos con su DNI/QR, la cocina despacha mediante pantallas KDS sin papel y la dirección monitorea costos y mermas en tiempo real.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Enterprise ROI & Waste Reduction Calculator -->
+    <section class="roi-section" id="calculadora">
+        <div class="container">
+            <div class="roi-box glass animate-on-scroll">
+                <div class="roi-header text-center">
+                    <div class="badge">Simulador Financiero</div>
+                    <h2 class="gradient-text">Calcule el ahorro anual proyectado para su empresa</h2>
+                    <p class="section-subtitle">Estime el impacto directo de reducir mermas alimentarias y optimizar horas de gestión con TicMeal.</p>
+                </div>
+
+                <div class="roi-grid">
+                    <!-- Calculator Sliders -->
+                    <div class="roi-controls">
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label for="calc-diners">Comensales diarios promedio:</label>
+                                <span class="slider-value" id="diners-val">400 personas</span>
+                            </div>
+                            <input type="range" id="calc-diners" min="50" max="2500" step="25" value="400" class="roi-slider">
+                            <div class="slider-ticks">
+                                <span>50</span>
+                                <span>1,250</span>
+                                <span>2,500+</span>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label for="calc-meal-cost">Costo promedio de la vianda / ración:</label>
+                                <span class="slider-value" id="cost-val">$5.50 USD</span>
+                            </div>
+                            <input type="range" id="calc-meal-cost" min="2" max="15" step="0.5" value="5.5" class="roi-slider">
+                            <div class="slider-ticks">
+                                <span>$2.00</span>
+                                <span>$8.50</span>
+                                <span>$15.00+</span>
+                            </div>
+                        </div>
+
+                        <div class="slider-group">
+                            <div class="slider-header">
+                                <label for="calc-waste">Porcentaje estimado de merma actual:</label>
+                                <span class="slider-value" id="waste-val">18%</span>
+                            </div>
+                            <input type="range" id="calc-waste" min="5" max="30" step="1" value="18" class="roi-slider">
+                            <div class="slider-ticks">
+                                <span>5%</span>
+                                <span>15%</span>
+                                <span>30%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Calculator Results Output -->
+                    <div class="roi-results">
+                        <div class="result-hero-card">
+                            <span class="result-lead-label">Ahorro Anual Estimado en Alimentos</span>
+                            <div class="result-big-number" id="calc-savings-display">$39,600 USD</div>
+                            <p class="result-disclaimer">Basado en una reducción proyectada del 40% sobre el desperdicio operativo actual (250 días hábiles de operación).</p>
+                        </div>
+
+                        <div class="secondary-results-grid">
+                            <div class="secondary-result-item">
+                                <span class="sec-label">Horas Administrativas Ahorradas</span>
+                                <span class="sec-number" id="calc-hours-display">375 hrs / año</span>
+                                <span class="sec-sub">En planificación y auditoría de cocina</span>
+                            </div>
+                            <div class="secondary-result-item">
+                                <span class="sec-label">Raciones Rescatadas</span>
+                                <span class="sec-number" id="calc-meals-display">7,200 viandas</span>
+                                <span class="sec-sub">Equivalente a comida no desechada</span>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn-primary btn-block btn-glow" id="btn-transfer-roi">
+                            Solicitar Diagnóstico con mis Métricas &rarr;
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enterprise Security & Multi-Tenant Compliance Section (Dark Theme) -->
+    <section class="security-section" id="seguridad">
+        <div class="container">
+            <div class="security-box animate-on-scroll">
+                <div class="section-header text-center">
+                    <div class="badge badge-security">🛡️ Seguridad de Grado Bancario</div>
+                    <h2 class="security-title">Arquitectura Multi-Tenant Segura y Cumplimiento Normativo</h2>
+                    <p class="security-subtitle">Diseñado desde la base para satisfacer las demandas más exigentes de auditoría de TI y estándares de inocuidad alimentaria.</p>
+                </div>
+
+                <div class="security-grid">
+                    <div class="security-card">
+                        <div class="sec-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                        </div>
+                        <h4>Aislamiento Lógico de Datos</h4>
+                        <p>Cada organización cuenta con aislamiento total por <code>companyId</code> mediante interceptores y repositorios dedicados. Cero riesgo de mezcla de información entre clientes o sedes.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="sec-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                        </div>
+                        <h4>Control de Acceso RBAC &amp; JWT</h4>
+                        <p>Matriz de permisos estricta para Super Admins, Administradores de Empresa, Jefes de Cocina y Comensales con tokens criptográficos protegidos.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="sec-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <h4>Trazabilidad Normas HACCP &amp; BPM</h4>
+                        <p>Registro inmutable de movimientos de stock, números de lote de proveedores, fechas de vencimiento y temperaturas de despacho para inspecciones sanitarias.</p>
+                    </div>
+
+                    <div class="security-card">
+                        <div class="sec-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        </div>
+                        <h4>Alta Disponibilidad 99.9% SLA</h4>
+                        <p>Infraestructura cloud con copias de seguridad continuas, monitoreo activo de rendimiento y cifrado de datos en tránsito con TLS 1.3.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- High-Converting B2B Contact & Demo Booking Form -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-box glass animate-on-scroll">
                 <div class="contact-header">
-                    <h2 class="gradient-text">Impulse su transformación digital</h2>
-                    <p>Descubra cómo TicMeal puede optimizar su operación. Complete el formulario y un consultor se pondrá en contacto.</p>
+                    <div class="badge">Atención Corporativa</div>
+                    <h2 class="gradient-text">Agende una demostración personalizada</h2>
+                    <p>Conversemos con un especialista en comedores corporativos. En una videollamada de 15 minutos analizaremos los requerimientos de su organización.</p>
                 </div>
                 
-                <form action="https://formspree.io/f/xjgbojgz" method="POST" class="contact-form">
+                <form action="https://formspree.io/f/xjgbojgz" method="POST" class="contact-form" id="b2b-lead-form">
                     <div class="form-row">
                         <div class="input-group">
-                            <input type="text" name="nombre" placeholder="Nombre" required>
+                            <label for="lead-nombre">Nombre *</label>
+                            <input type="text" id="lead-nombre" name="nombre" placeholder="Ej. Carlos" required>
                         </div>
                         <div class="input-group">
-                            <input type="text" name="apellido" placeholder="Apellido" required>
+                            <label for="lead-apellido">Apellido *</label>
+                            <input type="text" id="lead-apellido" name="apellido" placeholder="Ej. Rodríguez" required>
                         </div>
                     </div>
+
                     <div class="form-row">
                         <div class="input-group">
-                            <input type="text" name="organizacion" placeholder="Empresa / Institución" required>
+                            <label for="lead-org">Empresa / Institución *</label>
+                            <input type="text" id="lead-org" name="organizacion" placeholder="Ej. Acindar / Techint / Compass Group" required>
                         </div>
                         <div class="input-group">
-                            <input type="text" name="cargo" placeholder="Cargo / Departamento" required>
+                            <label for="lead-email">Correo Corporativo *</label>
+                            <input type="email" id="lead-email" name="email" placeholder="carlos.rodriguez@empresa.com" required>
                         </div>
                     </div>
-                    <div class="input-group">
-                        <input type="email" name="email" placeholder="Correo corporativo" required>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="lead-cargo">Su Rol o Departamento *</label>
+                            <select id="lead-cargo" name="cargo" required class="select-input">
+                                <option value="" disabled selected>Seleccione su área...</option>
+                                <option value="Finanzas / CFO / Compras">Finanzas / CFO / Compras</option>
+                                <option value="Operaciones / Jefe de Cocina">Operaciones / Jefe de Cocina</option>
+                                <option value="Recursos Humanos / Bienestar">Recursos Humanos / Bienestar</option>
+                                <option value="Empresa de Catering / Concesionario">Empresa de Catering / Concesionario</option>
+                                <option value="Dirección General / Gerencia">Dirección General / Gerencia</option>
+                                <option value="Otro">Otro departamento</option>
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <label for="lead-diners">Comensales Diarios Estimados *</label>
+                            <select id="lead-diners" name="comensales_diarios" required class="select-input">
+                                <option value="" disabled selected>Seleccione escala de comedor...</option>
+                                <option value="Menos de 150 comensales">Menos de 150 comensales</option>
+                                <option value="150 a 500 comensales">150 a 500 comensales</option>
+                                <option value="500 a 1,500 comensales">500 a 1,500 comensales</option>
+                                <option value="Más de 1,500 comensales (Multi-Sede)">Más de 1,500 comensales (Multi-Sede)</option>
+                            </select>
+                        </div>
                     </div>
+
                     <div class="input-group">
-                        <textarea name="mensaje" placeholder="Describa brevemente las necesidades de su comedor..." rows="4" required></textarea>
+                        <label for="lead-mensaje">Requerimientos o desafíos principales *</label>
+                        <textarea id="lead-mensaje" name="mensaje" placeholder="Cuéntenos sobre la dinámica de su comedor (ej. plantas 24/7, reducción de filas, integración con nómina, control de mermas)..." rows="4" required></textarea>
                     </div>
                     
-                    <button type="submit" class="btn-primary btn-block btn-glow">Enviar Solicitud</button>
+                    <button type="submit" class="btn-primary btn-block btn-glow submit-btn">
+                        <span>Solicitar Demo &amp; Diagnóstico de Ahorro</span>
+                    </button>
+
+                    <div class="form-guarantees">
+                        <div class="guarantee-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Sin compromiso de contratación</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Respuesta en menos de 24 horas hábiles</span>
+                        </div>
+                        <div class="guarantee-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Videollamada guiada de 15 minutos</span>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
     </section>
 
+    <!-- Enterprise Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-info">
-                    <img src="assets/logo-navbar.png" alt="TicMeal" class="footer-logo">
-                    <p>Innovación tecnológica para la gestión gastronómica institucional.</p>
+                    <div class="footer-brand">
+                        <img src="assets/logo-navbar.png" alt="TicMeal Enterprise" class="footer-logo">
+                        <span class="logo-enterprise-badge">Enterprise</span>
+                    </div>
+                    <p>La plataforma SaaS integral con Inteligencia Artificial para la gestión inteligente de comedores corporativos e institucionales.</p>
+                    <div class="footer-security-stamp">
+                        <span>🔒 Arquitectura Multi-Tenant Cifrada</span>
+                    </div>
                 </div>
+
                 <div class="footer-links">
-                    <h4>Navegación</h4>
+                    <h4>Plataforma</h4>
                     <ul>
-                        <li><a href="#about">Solución</a></li>
-                        <li><a href="#features">Funciones</a></li>
-                        <li><a href="#contact">Solicitar Demo</a></li>
+                        <li><a href="#solucion">Solución Global</a></li>
+                        <li><a href="#copiloto-ia">Copiloto IA Gemini</a></li>
+                        <li><a href="#plataforma">Módulos &amp; KDS</a></li>
+                        <li><a href="#calculadora">Calculadora de ROI</a></li>
+                        <li><a href="#seguridad">Seguridad &amp; Compliance</a></li>
                     </ul>
                 </div>
+
+                <div class="footer-links">
+                    <h4>Segmentos</h4>
+                    <ul>
+                        <li><a href="#roles">Plantas Industriales</a></li>
+                        <li><a href="#roles">Parques Corporativos</a></li>
+                        <li><a href="#roles">Empresas de Catering</a></li>
+                        <li><a href="#roles">Salud &amp; Educación</a></li>
+                    </ul>
+                </div>
+
                 <div class="footer-contact">
-                    <h4>Canales Directos</h4>
-                    <p>ticmeal.app@gmail.com</p>
+                    <h4>Contacto Directo</h4>
+                    <p class="contact-email"><a href="mailto:ticmeal.app@gmail.com">ticmeal.app@gmail.com</a></p>
+                    <p class="contact-sub">Atención a clientes y consultoría B2B para Argentina y Latinoamérica.</p>
+                    <div class="footer-cta-link">
+                        <a href="#contact" class="btn-outline">Agendar Llamada</a>
+                    </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 TicMeal. Soluciones Enterprise para Comedores.</p>
+                <p>&copy; 2026 TicMeal Enterprise. Todos los derechos reservados. Soluciones B2B para Comedores Institucionales.</p>
             </div>
         </div>
     </footer>
